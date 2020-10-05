@@ -1,0 +1,123 @@
+* Starting client
+* Connecting to master process on port 17807
+* Analyzing classpath: 
+  - /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/out/production/6 H Streams
+  - /usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/jce.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/jfxswt.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/plugin.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar
+  - /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+  - /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/out/test/6 H Streams
+  - /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/out/production/6 H Streams
+  - /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/hue_old/Junit4Jars/guava-18.0.jar
+  - /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/hue_old/Junit4Jars/hamcrest-all-1.3.jar
+  - /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/hue_old/Junit4Jars/junit-4.12.jar
+* Finished analyzing classpath
+* Generating tests for class net.htlgrieskirchen.pos3.streams.Streams
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Setting up search algorithm for whole suite generation
+[MASTER] 12:37:13.867 [pool-2-thread-1] WARN  TestSuiteSerialization - Cannot load tests because file does not exist: /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/evosuite-seeds/net.htlgrieskirchen.pos3.streams.Streams.seed
+* Loaded 0 tests from /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/evosuite-seeds/net.htlgrieskirchen.pos3.streams.Streams.seed
+* Total number of test goals: 
+  - Line 42
+  - Branch 13
+  - Exception 0
+  - MutationFactory 6
+  - Output 75
+  - Method 13
+  - MethodNoException 13
+  - CBranchFitnessFactory 13
+* Using seed 1541417830390
+* Starting evolution
+* Search finished after 66s and 1738 generations, 513481 statements, best individual has fitness: 9.066666666666666
+* Writing sequences to pool
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 100%
+* Total number of goals: 42
+* Number of covered goals: 42
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 100%
+* Total number of goals: 13
+* Number of covered goals: 13
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 14
+* Number of covered goals: 14
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 100%
+* Total number of goals: 6
+* Number of covered goals: 6
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 88%
+* Total number of goals: 75
+* Number of covered goals: 66
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 100%
+* Total number of goals: 13
+* Number of covered goals: 13
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 100%
+* Total number of goals: 13
+* Number of covered goals: 13
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 100%
+* Total number of goals: 13
+* Number of covered goals: 13
+* Generated 49 tests with total length 242
+* Resulting test suite's coverage: 98% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 33%
+* Compiling and checking tests
+[MASTER] 12:38:27.494 [pool-2-thread-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: expected:<-1678356734> but was:<-1918834099>
+[MASTER] 12:38:27.494 [pool-2-thread-1] WARN  JUnitAnalyzer - Failing test:
+ Streams streams0 = new Streams();
+LinkedList<Weapon> linkedList0 = new LinkedList<Weapon>();
+CombatType combatType0 = CombatType.NONE;
+DamageType damageType0 = DamageType.MISSILE;
+Weapon weapon0 = new Weapon("net.htlgrieskirchen.pos3.streams.CombatType", combatType0, damageType0, 0, (-252), (-252), (-1));
+linkedList0.add(0, weapon0);
+long long0 = streams0.sumUpHashCodes(linkedList0);
+assertEquals((-1678356734L), long0);
+
+
+[MASTER] 12:38:27.537 [pool-2-thread-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: expected:<612071032> but was:<2056312621>
+[MASTER] 12:38:27.538 [pool-2-thread-1] WARN  JUnitAnalyzer - Failing test:
+ Streams streams0 = new Streams();
+LinkedList<Weapon> linkedList0 = new LinkedList<Weapon>();
+CombatType combatType0 = CombatType.MELEE;
+DamageType damageType0 = DamageType.SLASHING;
+Weapon weapon0 = new Weapon("%\"]N)f5", combatType0, damageType0, (-1), (-1), (-1), 1155);
+linkedList0.add(weapon0);
+long long0 = streams0.sumUpHashCodes(linkedList0);
+assertEquals(612071032L, long0);
+
+
+* Writing JUnit test case 'Streams_ESTest' to /home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/tests
+* Done!
+

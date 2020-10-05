@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project>
+    <totalNumberOfTestableClasses>1</totalNumberOfTestableClasses>
+    <cut>
+        <fullNameOfTargetClass>net.htlgrieskirchen.pos3.streams.Streams</fullNameOfTargetClass>
+        <fullNameOfTestSuite>net.htlgrieskirchen.pos3.streams.Streams_ESTest</fullNameOfTestSuite>
+        <generation>
+            <id>0</id>
+            <failed>false</failed>
+            <modified>true</modified>
+            <timeBudgetInSeconds>120</timeBudgetInSeconds>
+            <memoryInMB>2000</memoryInMB>
+            <std_err_CLIENT>/home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_err_CLIENT.log</std_err_CLIENT>
+            <std_out_CLIENT>/home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_out_CLIENT.log</std_out_CLIENT>
+            <std_err_MASTER>/home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_err_MASTER.log</std_err_MASTER>
+            <std_out_MASTER>/home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_out_MASTER.log</std_out_MASTER>
+            <suite>
+                <fullPathOfTestSuite>/home/rsickinger/GoogleDrive/HTL/Programmieren/Hausuebungen/StreamsHue/Musterloesung/6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/tests/net/htlgrieskirchen/pos3/streams/Streams_ESTest.java</fullPathOfTestSuite>
+                <numberOfTests>49</numberOfTests>
+                <totalNumberOfStatements>242</totalNumberOfStatements>
+                <totalEffortInSeconds>74</totalEffortInSeconds>
+                <coverage>
+                    <criterion>LineCoverage</criterion>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>111111111111111111111111111111111111111111</coverageBitString>
+                </coverage>
+                <coverage>
+                    <criterion>BranchCoverage</criterion>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111</coverageBitString>
+                </coverage>
+                <coverage>
+                    <criterion>ExceptionCoverage</criterion>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>11111111111111</coverageBitString>
+                </coverage>
+                <coverage>
+                    <criterion>WeakMutationScore</criterion>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>111111</coverageBitString>
+                </coverage>
+                <coverage>
+                    <criterion>OutputCoverage</criterion>
+                    <coverageValue>0.88</coverageValue>
+                    <coverageBitString>111110110111111111111111111111111111111111111111110110111111110110110110110</coverageBitString>
+                </coverage>
+                <coverage>
+                    <criterion>MethodCoverage</criterion>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111</coverageBitString>
+                </coverage>
+                <coverage>
+                    <criterion>MethodNoExceptionCoverage</criterion>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111</coverageBitString>
+                </coverage>
+                <coverage>
+                    <criterion>CBranchCoverage</criterion>
+                    <coverageValue>1.0</coverageValue>
+                    <coverageBitString>1111111111111</coverageBitString>
+                </coverage>
+            </suite>
+        </generation>
+    </cut>
+</Project>
