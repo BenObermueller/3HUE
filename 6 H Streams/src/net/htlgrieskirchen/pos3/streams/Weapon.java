@@ -13,49 +13,94 @@ public class Weapon {
     private int value;
 
     public Weapon(String name, CombatType combatType, DamageType damageType, int damage, int speed, int minStrength, int value) {
-        //implement this
+        this.name = name;
+        this.combatType = combatType;
+        this.damageType = damageType;
+        this.damage = damage;
+        this.speed = speed;
+        this.minStrength = minStrength;
+        this.value = value;
     }
 
     public String getName() {
-        //implement this
+        return name;
     }
-    
+
     public CombatType getCombatType() {
-        //implement this
+        return combatType;
     }
 
     public DamageType getDamageType() {
-        //implement this
+        return damageType;
     }
 
     public int getDamage() {
-        //implement this
+        return damage;
     }
 
     public int getSpeed() {
-        //implement this
+        return speed;
     }
 
     public int getMinStrength() {
-        //implement this
+        return minStrength;
     }
-    
+
     public int getValue() {
-        //implement this
+        return value;
     }
-    
+
     public void setValue(int value) {
-        //implement this
+        this.value = value;
     }
 
     @Override
     public int hashCode() {
-        //implement this
+        int hash = 3;
+        hash = 67 * hash + Objects.hashCode(this.name);
+        hash = 67 * hash + Objects.hashCode(this.combatType);
+        hash = 67 * hash + Objects.hashCode(this.damageType);
+        hash = 67 * hash + this.damage;
+        hash = 67 * hash + this.speed;
+        hash = 67 * hash + this.minStrength;
+        hash = 67 * hash + this.value;
+        return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        //implement this
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Weapon other = (Weapon) obj;
+        if (this.damage != other.damage) {
+            return false;
+        }
+        if (this.speed != other.speed) {
+            return false;
+        }
+        if (this.minStrength != other.minStrength) {
+            return false;
+        }
+        if (this.value != other.value) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (this.combatType != other.combatType) {
+            return false;
+        }
+        if (this.damageType != other.damageType) {
+            return false;
+        }
+        return true;
     }
 
     @Override
