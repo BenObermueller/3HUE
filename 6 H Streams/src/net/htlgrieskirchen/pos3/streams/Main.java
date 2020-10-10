@@ -5,12 +5,16 @@
  */
 package net.htlgrieskirchen.pos3.streams;
 
+import com.sun.xml.internal.ws.util.StringUtils;
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,27 +30,40 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+    }
+
+    public void runFirstA() {
         Main m = new Main();
+        final String FILE_NAME = "weapons.csv";
         Scanner sc = new Scanner(System.in);
-        final String FILE_NAME ="weapons.csv";
-        
+
         List<Weapon> myList = m.loadList(FILE_NAME);
-        
+
         System.out.println("1...sort List by Damage");
-        System.out.println("2...sort List by Damage");
-        System.out.println("3...print List in Tabelle");
+        System.out.println("2...sort List by Letters");
 
         String ausw = sc.nextLine();
         if (ausw.equals("1")) {
             myList = m.sortListByDamage(myList);
         } else if (ausw.equals("2")) {
             myList = m.sortListByLetters(myList);
-        }else if(ausw.equals("3")){
-            m.printListWithInterfaceInTabelle(myList);
-        }else {
+        } else {
             System.out.println("Fehler bei der Eingabe!");
         }
-        //m.printListWithInterface(myList);
+
+        System.out.println("1...print List with Interface");
+        System.out.println("2...print List into Tabelle");
+
+        ausw = sc.nextLine();
+
+        if (ausw.equals("1")) {
+            m.printListWithInterface(myList);
+        } else if (ausw.equals("2")) {
+            m.printListWithInterfaceInTabelle(myList);
+        } else {
+            System.out.println("Fehler bei der Eingabe!");
+        }
     }
 
     public List<Weapon> loadList(String csvFile) {
@@ -109,31 +126,80 @@ public class Main {
             printable.print(list.get(i));
         }
     }
-    
-    private void printListWithInterfaceInTabelle(List<Weapon> list){
+
+    private void printListWithInterfaceInTabelle(List<Weapon> list) {
         Printable printable = w -> System.out.println(w.getName() + " [" + w.getDamageType() + " = " + w.getDamage() + "]");
         for (int i = 0; i < list.size(); i++) {
-            String outLine ="+";
-            for(int j=0; j< list.get(i).getName().length(); j++){
-                outLine +="-";
+            String outLine = "+";
+            for (int j = 0; j < list.get(i).getName().length(); j++) {
+                outLine += "-";
             }
-            outLine +="+";
-            for(int j=0; j< list.get(i).getDamageType().toString().length(); j++){
-                outLine +="-";
+            outLine += "+";
+            for (int j = 0; j < list.get(i).getDamageType().toString().length(); j++) {
+                outLine += "-";
             }
-            outLine +="+";
-            if(list.get(i).getDamage()>=10){
-                for(int j=0; j< 4; j++){
-                outLine +="-";
+            outLine += "+";
+            if (list.get(i).getDamage() >= 10) {
+                for (int j = 0; j < 4; j++) {
+                    outLine += "-";
                 }
-            }else{
-                for(int j=0; j< 3; j++){
-                outLine +="-";
+            } else {
+                for (int j = 0; j < 3; j++) {
+                    outLine += "-";
+                }
             }
-            }
-            outLine +="+";
+            outLine += "+";
             System.out.println(outLine);
             printable.print(list.get(i));
         }
+    }
+
+    public void runSecondA() {
+        Main m = new Main();
+        Streams s = new Streams();
+
+//        int[] arr = m.fillIntArr();
+//        System.out.println(s.average(arr));
+        List<String> list = s.upperCase(m.fillStringList());
+        for (String str : list) {
+            System.out.println(str);
+        }
+    }
+
+    public int[] fillIntArr() {
+        int[] arr = new int[10000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 100) + 1;
+        }
+        return arr;
+    }
+
+    public String[] fillStringList() {
+        String[] arr = new String[10];
+        for (int j = 0; j < arr.length; j++) {
+            int leftLimit = 97; // letter 'a'
+	    int rightLimit = 122; // letter 'z'
+	    int targetStringLength = 10;
+	    Random random = new Random();
+	    StringBuilder buffer = new StringBuilder(targetStringLength);
+	    for (int i = 0; i < targetStringLength; i++) {
+	        int randomLimitedInt = leftLimit + (int) 
+	          (random.nextFloat() * (rightLimit - leftLimit + 1));
+	        buffer.append((char) randomLimitedInt);
+	    }
+	    String generatedString = buffer.toString();
+	 
+	    arr[j] = generatedString;
+        }
+
+        return arr;
+    }
+    
+    public void runThirdA(){
+        
+    }
+    
+    public void runForthA(){
+        
     }
 }

@@ -208,12 +208,19 @@ public class StreamsTest {
         System.out.println("increaseValuesByTenPercent");
         Streams instance = new Streams();
         int expResult = 106755;
-        instance.increaseValuesByTenPercent(weapons);
         int result = 0;
-        result = weapons.stream()
-                .map((w) -> w.getValue())
-                .reduce(result, Integer::sum);
+        result = instance.increaseValuesByTenPercent(weapons);
         assertEquals(expResult, result);
+        
+//        System.out.println("increaseValuesByTenPercent");
+//        Streams instance = new Streams();
+//        int expResult = 106755;
+//        instance.increaseValuesByTenPercent(weapons);
+//        int result = 0;
+//        result = weapons.stream()
+//                .map((w) -> w.getValue())
+//                .reduce(result, Integer::sum);
+//        assertEquals(expResult, result);
     }
 
     private List<Weapon> readFile(String file) throws IOException {
