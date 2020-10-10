@@ -20,6 +20,7 @@ import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  *
@@ -32,7 +33,21 @@ public class Main {
      */
     public static void main(String[] args) {
         Main m = new Main();
-        m.runThirdA();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Die 1 und 2 Aufgabe kann im getested werden");
+        System.out.println("3...Aufgabe 3");
+        System.out.println("4...Aufgabe 4");
+        
+        switch(sc.nextLine()){
+            case "3":
+                m.runThirdA();
+                break;
+            case "4":
+                m.runForthA();
+                break;
+            default:
+                System.out.println("Falsche Eingabe!");
+        }
     }
 
     public void runFirstA() {
@@ -302,6 +317,13 @@ public class Main {
     }
 
     public void runForthA() {
-
+        final int erg = IntStream.of(1,2,3,4,5,6,7,8,9,10).filter((value) -> {
+            if(value%2 == 0){
+                return true;
+            }else{
+                return false;
+            }
+        }).map(Integer::valueOf).reduce(0, (z1, z2) -> z1+z2);
+        System.out.println(erg);
     }
 }
