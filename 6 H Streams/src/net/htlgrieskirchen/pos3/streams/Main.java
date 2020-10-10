@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -30,7 +31,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Main m = new Main();
+        m.runThirdA();
     }
 
     public void runFirstA() {
@@ -178,28 +180,128 @@ public class Main {
         String[] arr = new String[10];
         for (int j = 0; j < arr.length; j++) {
             int leftLimit = 97; // letter 'a'
-	    int rightLimit = 122; // letter 'z'
-	    int targetStringLength = 10;
-	    Random random = new Random();
-	    StringBuilder buffer = new StringBuilder(targetStringLength);
-	    for (int i = 0; i < targetStringLength; i++) {
-	        int randomLimitedInt = leftLimit + (int) 
-	          (random.nextFloat() * (rightLimit - leftLimit + 1));
-	        buffer.append((char) randomLimitedInt);
-	    }
-	    String generatedString = buffer.toString();
-	 
-	    arr[j] = generatedString;
+            int rightLimit = 122; // letter 'z'
+            int targetStringLength = 10;
+            Random random = new Random();
+            StringBuilder buffer = new StringBuilder(targetStringLength);
+            for (int i = 0; i < targetStringLength; i++) {
+                int randomLimitedInt = leftLimit + (int) (random.nextFloat() * (rightLimit - leftLimit + 1));
+                buffer.append((char) randomLimitedInt);
+            }
+            String generatedString = buffer.toString();
+
+            arr[j] = generatedString;
         }
 
         return arr;
     }
-    
-    public void runThirdA(){
+
+    public void runThirdA() {
+
+        Main m = new Main();
+
+        final Predicate<Integer> isEven = (t) -> {
+            if (t != null) {
+                if (t % 2 == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        };
+
+        final Predicate<Integer> isPositive = (t) -> {
+            if (t != null) {
+                if (t >= 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        };
+
+        final Predicate<Integer> isZero = (t) -> {
+            if (t != null) {
+                if (t == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        };
+
+        final Predicate<Integer> isNull = (t) -> {
+            if (t == null) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
+        final Predicate<String> isShortWord = (t) -> {
+            if (t != null) {
+                if (t.length() < 4) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        };
+
+        List<Integer> intList = m.fillListForA3();
+        List<String> stringList = m.fillStringListforA3();
         
+        System.out.println("isEven:");
+        intList.stream().filter(isEven).forEach(System.out::println);
+
+        System.out.println("\nisPositve:");
+        intList.stream().filter(isPositive).forEach(System.out::println);
+
+        System.out.println("\nisZero:");
+        intList.stream().filter(isZero).forEach(System.out::println);
+
+        System.out.println("\nisNull:");
+        intList.stream().filter(isNull).forEach(System.out::println);
+
+        System.out.println("\nisEven and Positive:");
+        intList.stream().filter(isEven.and(isPositive)).forEach(System.out::println);
+
+        System.out.println("\nisUneven and Positive:");
+        intList.stream().filter(isEven.negate().and(isPositive)).forEach(System.out::println);
+        
+        System.out.println("\nis short Word:");
+        stringList.stream().filter(isShortWord).forEach(System.out::println);
     }
-    
-    public void runForthA(){
-        
+
+    private List<Integer> fillListForA3() {
+        List<Integer> l = new ArrayList<>();
+        l.add(10);
+        l.add(5);
+        l.add(2);
+        l.add(-10);
+        l.add(-5);
+        l.add(0);
+        l.add(null);
+        return l;
+    }
+
+    private List<String> fillStringListforA3() {
+        List<String> l = new ArrayList<>();
+        l.add("Hallo");
+        l.add("HI");
+        l.add(null);
+        return l;
+    }
+
+    public void runForthA() {
+
     }
 }
